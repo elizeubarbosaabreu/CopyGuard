@@ -4,8 +4,18 @@
 # Como usar no site ou blogue
 Coloque o código a seguir entre as tags ```<head>``` e  ```</head>```:
 ```
-<!-- Codigo para gerar fonte e evitar plagio -->
-<script src='https://raw.githubusercontent.com/elizeubarbosaabreu/CopyGuard/master/CopyGuard.js'></script>
-<!-- Fim do codigo -->
+<!-- Script citar fonte do blogger por Elizeu Barbosa Abreu -->
+<script type='text/javascript'>
+document.addEventListener(&#39;copy&#39;, function(e) {
+    var selectedText = window.getSelection().toString();
+    var pageUrl = window.location.href;
+    var citation = &quot;\n\nFonte: &quot; + pageUrl;
+    var copiedTextWithCitation = selectedText + citation;
+
+    e.clipboardData.setData(&#39;text/plain&#39;, copiedTextWithCitation);
+    e.preventDefault();
+}); 
+</script>
+<!-- Fim Script citar fonte -->
 ```
 Se este conteúdo for útil não esqueça de compartilhar o conteúdo e me seguir aqui no GitHub.
